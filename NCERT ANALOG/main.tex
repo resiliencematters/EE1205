@@ -76,36 +76,32 @@ wavelength of sound in the tissue in which the speed of sound is $1.7 \, \text{k
         \hline
         Input Parameter & Value & Description \\
         \hline
-        $c$ & $1.7\times10^3$ & Speed of Wave  \\
+        $c$ & $1.7\times10^3$ & Speed of Wave (Distance travelled per unit time)  \\
         \hline
-        $f$ & $4.2\times10^6$ & Frequency \\
+        $f$ & $4.2\times10^6$ & Frequency (Number of oscillations per seconds)  \\
         \hline
-        
+        $A$ & 1 & Wave Amplitude (Maximum distance reached longitudinally by the wave during oscillation) \\
+        \hline
+        $T$ & $2.38\times10^-7$ & Time period(Time taken to complete one osciallation) \\
+        \hline
+        $s(t)$ & $s(t)=A\cos(2\pi f t+\phi)$ & Wave equation (Equation describing the motion of the wave) \\
+        \hline
     \end{tabular}
     
 \end{table} \\ \\
 Wave equation for sound is: \\
-$\begin{array}{ll}
-\hspace{0.5cm} s(t)=s_{\text {max }}\cos(2\pi f t+\phi) \\ \\
-\hspace{0.5cm}c=\frac{\Delta d}{\Delta t} ; \quad \Delta t=T \text { (Time period) } ,d=\lambda \text { (Wavelength) }  \\ 
-\hspace{0.5cm}c=\frac{\lambda}{T}  \quad  \\ 
-\hspace{0.5cm}c=f\lambda ; \quad \frac{1}{T}= f
-\end{array}$ 
-
-
-
-$\begin{array}{ll}
-c= f \lambda \notag \\
-\lambda = \frac{c}{f} \notag 
-%\lambda &= \frac{1.7 \times 10^3}{4.2 \times 10^6} \, \text{m} \notag \\
-%\lambda &= 4.047 \times 10^{-4} \, \text{m}
-\end{array}$
+\begin{align}
+c&=\frac{\Delta d}{\Delta t} \\ 
+\frac{1}{T}&= f ; \Delta d= \lambda \\
+c&=\frac{\lambda}{T}  \\
+c&=f\lambda \\
+\lambda&=\frac{c}{f}
+\end{align}
 \\
 \\ \\ \\ \\ \\ \\
+\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
 
-%Hence we substitute the input \\ parameters to get the answer \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ 
-Plotting the Sound Wave:
-\includegraphics[scale=0.7]{images/plot.png}
+\includegraphics[scale=0.65]{images/plot.png}
 
 
 
@@ -138,4 +134,4 @@ Plotting the Sound Wave:
 
 
 
-\end{document}
+

@@ -65,43 +65,37 @@
 \Large
 A hospital uses an ultrasonic scanner to locate tumors in a tissue. What is the
 wavelength of sound in the tissue in which the speed of sound is $1.7 \, \text{km/s}$? The operating frequency of the scanner is $4.2 \, \text{MHz}$.
-
 \bigskip
+\\
 \Large
 \textbf{SOLUTION:} \\
 \begin{table}[h]
-    \centering
-    
+    \centering  
     \begin{tabular}{|c|c|c|}
         \hline
         Input Parameter & Value & Description \\
         \hline
-        $c$ & $1.7\times10^3$ & Speed of Wave (Distance travelled per unit time)  \\
+        $c$ & $1.7\times10^3$ & Speed of Wave  \\
         \hline
-        $f$ & $4.2\times10^6$ & Frequency (Number of oscillations per seconds)  \\
+        $f$ & $4.2\times10^6$ & Frequency  \\
         \hline
-        $A$ & 1 & Wave Amplitude (Maximum distance reached longitudinally by the wave during oscillation) \\
+        $A$ & 1 & Wave Amplitude \\
         \hline
-        $T$ & $2.38\times10^-7$ & Time period(Time taken to complete one osciallation) \\
+        $T$ & $2.38\times10^-7$ & Time period \\
         \hline
-        $s(t)$ & $s(t)=A\cos(2\pi f t+\phi)$ & Wave equation (Equation describing the motion of the wave) \\
+        $s(t)$ & $s(t)=A\cos(2\pi f t+\phi)$ & Wave equation \\
+        \hline
+        $\lambda$ & $\frac{c}{f}$ & Wavelength (to be found) \\
         \hline
     \end{tabular}
-    
-\end{table} \\ \\
-Wave equation for sound is: \\
-\begin{align}
-c&=\frac{\Delta d}{\Delta t} \\ 
-\frac{1}{T}&= f ; \Delta d= \lambda \\
-c&=\frac{\lambda}{T}  \\
-c&=f\lambda \\
-\lambda&=\frac{c}{f}
-\end{align}
-\\
-\\ \\ \\ \\ \\ \\
-\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+\end{table} 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{images/plot.png}
+    \caption{Waveplot}
+    \label{fig:Plot1}
+\end{figure}
 
-\includegraphics[scale=0.65]{images/plot.png}
 
 
 
@@ -134,4 +128,4 @@ c&=f\lambda \\
 
 
 
-
+\end{document}

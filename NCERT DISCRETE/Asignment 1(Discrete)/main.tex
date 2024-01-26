@@ -47,40 +47,47 @@
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
 
-\title{NCERT Mathematics Ex 5.3 Q8}
+\title{NCERT Mathematics Ex 9.4 Q6}
 \author{EE23BTECH11059 - Tejas$^{}$% <-this % stops a space
 }
 \maketitle
 \newpage
 
-\Huge{QUESTION 8:}
-\\ \\
-        \medskip
         \Large
-        Find the sum of first 51 terms of an AP whose second and third terms are 14 and 18
-respectively.
-    \bigskip
+        1) Find the sum to n terms of\\$3 \times 8 + 6 \times 11 + 9 \times 14 + ...$
+    \vspace{1cm}
     \Large
     \\
-        Given : a\textsubscript{2}=14, a\textsubscript{3}=18
+        \Large
+        SOLUTION: \\
+        \Large
+        Writing the series in terms of\\summation:
         \begin{align}
-            a+d&=14 \\
-            a+2d&=18 
+            &\sum_{r=0}^{n}3r\times(5+3r) \notag \\
+            &\sum_{r=0}^{n}15r+9r^2 
+        \end{align}
+        Using formulas for the sum of n terms (i) and sum of the squares of the n terms (ii) \\
+          \begin{align}
+            \sum_{r=0}^{n}r&=\frac{n(n+1)}{2} \hspace{2cm}(i)\notag \\
+            \sum_{r=0}^{n}r^2&=\frac{n(n+1)(2n+1)}{6} \hspace{2cm}(ii)\notag 
         \end{align}
         
-        After solving (1) and (2) \\
-           \begin{align}
-             d=4\\ a=10
-        \end{align}  
+        
+        Equation (1) evaluates to
+             \begin{align*}
+                \frac{15n(n+1)}{2} + \frac{9n(n+1)(2n+1)}{6} 
+            \end{align*}
+            
+            \begin{flushleft}
+                \hspace{0.5cm} \notag
+                \boxed{\frac{3n(n+1)(2n+6)}{2}} \notag
+            \end{flushleft}
+             
+             
+             
+        
 
-        To find the sum till 51 terms: \\
-        \begin{align}
-            S\textsubscript{51} &= \frac{51}{2} [(2)(4)+(50)(4)] \notag \\
-            S\textsubscript{51} &= \frac{51}{2} [208] \notag 
-        \end{align}
-        \begin{equation}
-    \boxed{S\textsubscript{51} &= 5304}
-\end{equation}
+        
 
 
 

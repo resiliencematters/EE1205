@@ -52,19 +52,17 @@
 }
 \maketitle
 \newpage
+\textbf{Question:}
+1) Find the sum to n terms of\\$3 \times 8 + 6 \times 11 + 9 \times 14 + ...$
+        
 
-        \Large
-        1) Find the sum to n terms of\\$3 \times 8 + 6 \times 11 + 9 \times 14 + ...$
-    \vspace{1cm}
-    \Large
-    \\
-        \Large
-        SOLUTION: \\
-        \Large
-        Writing the series in terms of\\summation:
+    
+    \solution
+        
+        Writing the general term of the series
         \begin{align}
-            &\sum_{r=0}^{n}3r\times(5+3r) \notag \\
-            &\sum_{r=0}^{n}15r+9r^2 
+            &T_n=(3r+3)\times(8+3r) \notag \\
+            &\sum_{r=0}^{n}9r^2+33r+24 
         \end{align}
         Using formulas for the sum of n terms (i) and sum of the squares of the n terms (ii) \\
           \begin{align}
@@ -74,14 +72,12 @@
         
         
         Equation (1) evaluates to
+        \\
              \begin{align*}
-                \frac{15n(n+1)}{2} + \frac{9n(n+1)(2n+1)}{6} 
+                \implies \frac{33n(n+1)}{2} + \frac{9n(n+1)(2n+1)}{6} + 24n
             \end{align*}
             
-            \begin{flushleft}
-                \hspace{0.5cm} \notag
-                \boxed{\frac{3n(n+1)(2n+6)}{2}} \notag
-            \end{flushleft}
+           
              
              
              

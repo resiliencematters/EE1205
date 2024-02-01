@@ -61,35 +61,31 @@
         
         Writing the general term of the series
         \begin{align}
-            &x_n=(3r+3)\times(8+3r) \notag \\
-            S_n&=\sum_{r=0}^{n}9r^2+33r+24 
+            x(n)&=(3n+3)(8+3n)  \\
+            y(n)&= \sum_{r=0}^{n} (3r+3)(8+3r)
         \end{align}
-        Using formulas for the sum of n terms (i) and sum of the squares of the n terms (ii) \\
-          \begin{align}
-            \sum_{r=0}^{n}r&=\frac{n(n+1)}{2} \hspace{2cm}(i)\notag \\
-            \sum_{r=0}^{n}r^2&=\frac{n(n+1)(2n+1)}{6} \hspace{2cm}(ii)\notag 
-        \end{align}
-        
-        
-        Equation (1) evaluates to
-        \\
-             \begin{align}
-                S_n=\frac{33n(n+1)}{2} + \frac{9n(n+1)(2n+1)}{6} + 24n
-            \end{align}
-        \\
-        $z$ transform of $x_n$:
+        $z$ transform of $x(n)$:
         \begin{align}
             X(z) &= \sum_{n=0}^{\infty} (3n+3)(3n+8)z^{-n} \\
             X(z) &= \sum_{n=0}^{\infty} (9n^2 +33n+24)z^{-n} \\
             %X(z) = 9(0(z^{-0})+1(z^{-1})+4(z)^{-2}....) + 33(0(z)^{-0} +1(z)^-%^1+2(z)^-^2....)  + 24(z^-^0+z^{-1}+z^{-2}....) 
             X(z)&=9z^{-1}\frac{(1+z^{-1})}{(1-z^{-1})^3} + \frac{33}{(1-z^{-1})^2} +24\frac{1}{1-z^{-1}} \hspace{0.5cm}; |z|>1 \hspace{0.5cm} (5)  \notag
         \end{align}
-        $z$ transform of $S_n$:
+        $z$ transform of $y(n)$:
         \begin{align*}
-            S(z)&= \sum_{n=0}^{\infty} \left( \frac{33n(n+1)}{2}+\frac{9n(n+1)(2n+1)}{6} +24n) \right) \hspace{0.5cm} (6)  \\
-            S(z)&= \frac{33}{2} \left( \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty} nz^{-n} \right) + \frac{9}{6} \left( \sum_{n=0}^{\infty} n^3z^{-n} + \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty}nz^{-n} \right) + 24\sum_{n=0}^{\infty} nz^{-n} \hspace{0.5cm} (7) \\
-            S(z)&= \frac{18z^{-1}\frac{-9}{z^{-1}}+6}{(1-z^{-1})^3} + \frac{42-9z^{-1}}{(1-z^{-1})^2} \hspace{0.5cm} (8)
+            y(z)&= \sum_{n=0}^{\infty} \left( \frac{33n(n+1)}{2}+\frac{9n(n+1)(2n+1)}{6} +24n) \right) \hspace{0.5cm} (6)  \\
+            y(z)&= \frac{33}{2} \left( \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty} nz^{-n} \right) + \frac{9}{6} \left( \sum_{n=0}^{\infty} n^3z^{-n} + \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty}nz^{-n} \right) + 24\sum_{n=0}^{\infty} nz^{-n} \hspace{0.5cm} (7) \\
+            y(z)&= \frac{18z^{-1}\frac{-9}{z^{-1}}+6}{(1-z^{-1})^3} + \frac{42-9z^{-1}}{(1-z^{-1})^2} \hspace{0.5cm} (8)
         \end{align*}
+        Using Contour Integration to find the inverse Z-transform,
+        \begin{align}
+            R & =\frac{1}{(m-1) !} \lim _{z \rightarrow a} \frac{d^{m-1}}{d z^{m-1}}\left((z-a)^m f(z)\right)
+        \end{align}
+        We get $y(n)$ as: 
+        \begin{align}
+            y(n)=\frac{33n(n+1)}{2}+\frac{9n(n+1)(2 n+1)}{6}+24n
+        \end{align}
+        
         \includegraphics[width=\columnwidth]{figs/plot.png}
 
         

@@ -73,24 +73,24 @@
         
         Equation (1) evaluates to
         \\
-             \begin{align*}
+             \begin{align}
                 S_n=\frac{33n(n+1)}{2} + \frac{9n(n+1)(2n+1)}{6} + 24n
-            \end{align*}
+            \end{align}
         \\
-        $Z$ transform of $x_n$:
+        $z$ transform of $x_n$:
+        \begin{align}
+            X(z) &= \sum_{n=0}^{\infty} (3n+3)(3n+8)z^{-n} \\
+            X(z) &= \sum_{n=0}^{\infty} (9n^2 +33n+24)z^{-n} \\
+            %X(z) = 9(0(z^{-0})+1(z^{-1})+4(z)^{-2}....) + 33(0(z)^{-0} +1(z)^-%^1+2(z)^-^2....)  + 24(z^-^0+z^{-1}+z^{-2}....) 
+            X(z)&=9z^{-1}\frac{(1+z^{-1})}{(1-z^{-1})^3} + \frac{33}{(1-z^{-1})^2} +24\frac{1}{1-z^{-1}} \hspace{0.5cm}; |z|>1 \hspace{0.5cm} (5)  \notag
+        \end{align}
+        $z$ transform of $S_n$:
         \begin{align*}
-            X(Z) &= \sum_{n=0}^{\infty} (3n+3)(3n+8)Z^{-n} \\
-            X(Z) &= \sum_{n=0}^{\infty} (9n^2 +33n+24)Z^{-n} \\
-            %X(Z) = 9(0(Z^{-0})+1(Z^{-1})+4(Z)^{-2}....) + 33(0(Z)^{-0} +1(Z)^-%^1+2(Z)^-^2....)  + 24(Z^-^0+Z^{-1}+Z^{-2}....) 
-            X(Z)&=9Z^{-1}\frac{(1+Z^{-1})}{(1-Z^{-1})^3} + \frac{33}{(1-Z^{-1})^2} +24\frac{1}{1-Z^{-1}} \hspace{0.5cm}; |Z|>1
+            S(z)&= \sum_{n=0}^{\infty} \left( \frac{33n(n+1)}{2}+\frac{9n(n+1)(2n+1)}{6} +24n) \right) \hspace{0.5cm} (6)  \\
+            S(z)&= \frac{33}{2} \left( \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty} nz^{-n} \right) + \frac{9}{6} \left( \sum_{n=0}^{\infty} n^3z^{-n} + \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty}nz^{-n} \right) + 24\sum_{n=0}^{\infty} nz^{-n} \hspace{0.5cm} (7) \\
+            S(z)&= \frac{18z^{-1}\frac{-9}{z^{-1}}+6}{(1-z^{-1})^3} + \frac{42-9z^{-1}}{(1-z^{-1})^2} \hspace{0.5cm} (8)
         \end{align*}
-        $Z$ transform of $S_n$:
-        \begin{align*}
-            S(Z)&= \sum_{n=0}^{\infty} \left( \frac{33n(n+1)}{2}+\frac{9n(n+1)(2n+1)}{6} +24n) \right) \\
-            S(Z)&= \frac{33}{2} \left( \sum_{n=0}^{\infty} n^2Z^{-n} + \sum_{n=0}^{\infty} nZ^{-n} \right) + \frac{9}{6} \left( \sum_{n=0}^{\infty} n^3Z^{-n} + \sum_{n=0}^{\infty} n^2Z^{-n} + \sum_{n=0}^{\infty}nZ^{-n} \right) + 24\sum_{n=0}^{\infty} nZ^{-n} \\
-            S(Z)&= \frac{18Z^{-1}\frac{-9}{Z^{-1}}+6}{(1-Z^{-1})^3} + \frac{1}{(1-Z^{-1})^2}{42-9Z^{-1}}
-        \end{align*}
-        \includegraphics[width=\columnwidth]{images/plot.png}
+        \includegraphics[width=\columnwidth]{figs/plot.png}
 
         
             

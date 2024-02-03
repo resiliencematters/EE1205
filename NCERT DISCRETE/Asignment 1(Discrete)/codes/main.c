@@ -1,36 +1,29 @@
 #include <stdio.h>
 
-// Function to generate the terms of the series and calculate the sum
-int generateAndSumSeries(int n) {
-    int sum = 0;
-    int first = 3;
-    int second = 8;
-    int i, term;
+int main() {
+    FILE *fp;
+    fp = fopen("values.dat", "w"); // Open file for writing
 
-    printf("Generated series: ");
-
-    for (i = 0; i < n; i++) {
-        term = first * second;
-        printf("%d ", term);
-        sum += term;
-
-        // Update the values for the next term
-        first += 3;
-        second += 3;
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 1;
     }
 
-    printf("\n");
+    int n = 15; // Number of terms
+    int sum = 0;
+    int a = 3, b = 8;
 
-    return sum;
-}
+    for (int i = 0; i <= n; i++) {
+        printf("%d * %d\n", a, b);
+        sum += (a * b);
+        fprintf(fp, "%d\n", sum); 
+        a += 3;
+        b += 3;
 
-int main() {
-    int n;
-    printf("Enter the number of terms: ");
-    scanf("%d", &n);
+    }
 
-    int sum = generateAndSumSeries(n);
-    printf("Sum of the series till %d terms: %d\n", n, sum);
+    // Write sum to file
+    fclose(fp);
 
     return 0;
 }

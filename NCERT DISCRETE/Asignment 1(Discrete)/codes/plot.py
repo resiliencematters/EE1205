@@ -1,35 +1,27 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
-import os
+def strip_line(line):
+    return line.strip()
 
-cwd = os.getcwd()  
-files = os.listdir(cwd) 
-print("Files in %r: %s" % (cwd, files))
-
+vectorized_strip = np.vectorize(strip_line)
 
 with open('values.dat', 'r') as file:
+    lines = np.array(file.readlines())
 
-    lines = []
+stripped_lines = vectorized_strip(lines)
 
-    
-    line = file.readline()
+lines_list = stripped_lines.tolist()
 
-    
-with open('values.dat', 'r') as file:
-    lines = [line.strip() for line in file.readlines()]
+n_values = np.arange(15)
 
-n_values = list(range(15)) 
-y_values = [lines[n] for n in n_values]
+access_element = np.vectorize(lambda n: lines_list[n])
 
+y_values = access_element(n_values)
 
 plt.stem(n_values, y_values, linefmt='b-', markerfmt='bo', basefmt='r-')
 plt.xlabel('n')
 plt.ylabel('y(n)')
-
-
 plt.title('Stem plot of y(n)')
 plt.grid(True)
 plt.show()
-
-
-

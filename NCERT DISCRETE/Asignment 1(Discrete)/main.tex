@@ -55,73 +55,41 @@
 \newpage
 \textbf{Question:}
 1) Find the sum to n terms of\\$3 \times 8 + 6 \times 11 + 9 \times 14 + ...$
-        
-
-    
     \solution
-        
         Writing the general term of the series
         \begin{align}
-            x(n)&=(3n+3)(8+3n)u(n)
+            x\brak{n}&=\brak{3n+3}\brak{8+3n}u]\brak{n}
         \end{align}
         The sum of n terms of this progression can be given by:
         \begin{align}
-    y\brak{n} &= x\brak{n}*u\brak{n}\\
-    \implies  Y\brak{z} &= X\brak{z}U\brak{z} \label{eq:eq3}
-\end{align}
-$z$ transform of $x(n)$:
-        \begin{align}
-            X(z) &= \sum_{n=0}^{\infty} (3n+3)(3n+8)z^{-n} \\
-            X(z) &= \sum_{n=0}^{\infty} (9n^2 +33n+24)z^{-n} \\
-            %X(z) = 9(0(z^{-0})+1(z^{-1})+4(z)^{-2}....) + 33(0(z)^{-0} +1(z)^-%^1+2(z)^-^2....)  + 24(z^-^0+z^{-1}+z^{-2}....) 
-            X(z)&=9z^{-1}\frac{(1+z^{-1})}{(1-z^{-1})^3} + \frac{33}{(1-z^{-1})^2} +24\frac{1}{1-z^{-1}}; \abs{z}>1    \label{eq:eq5}
+            y\brak{n} &= x\brak{n}*u\brak{n}\\
+            \implies  Y\brak{z} &= X\brak{z}U\brak{z} \label{eq:eq3}
         \end{align}
-        $z$ transform of $y(n)$:\\
-        using equation \eqref{eq:eq5} and equation \eqref{eq:eq3}:
+        $z$ transform of $x\brak{n}$:
         \begin{align}
-         %   Y(z)&= \sum_{n=0}^{\infty} \left( \frac{33n(n+1)}{2}+\frac{9n(n+1)(2n+1)}{6} +24n) \right) \hspace{0.5cm} (6)  \\
-            %Y(z)&= \frac{33}{2} \left( \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty} nz^{-n} \right) + \frac{9}{6} \left( \sum_{n=0}^{\infty} n^3z^{-n} + \sum_{n=0}^{\infty} n^2z^{-n} + \sum_{n=0}^{\infty}nz^{-n} \right) + 24\sum_{n=0}^{\infty} nz^{-n} \hspace{0.5cm} (7) \\
-        Y(z)&= \frac{(18-9z^2+67)Z^{-1}}{(1-z^{-1})^3} + \frac{(42-9z^{-1})}{(1-z^{-1})^2} 
+            X\brak{z} &= \sum_{n=0}^{\infty} \brak{3n+3}\brak{3n+8}z^{-n} \\
+            X\brak{z} &= \sum_{n=0}^{\infty} \brak{9n^2 +33n+24}z^{-n} \\
+            X\brak{z}&=9z^{-1}\frac{\brak{1+z^{-1}}}{\brak{1-z^{-1}}^3} + \frac{33}{\brak{1-z^{-1}}^2} +\frac{24}{\brak{1-z^{-1}}}; \abs{z}>1    \label{eq:eq5}
         \end{align}
-        Using Contour Integration  to find the inverse z-transform,
-        %\begin{align}
-         %   R & =\frac{1}{(m-1) !} \lim _{z \rightarrow a} \frac{d^{m-1}}{d z^{m-1}}\brak{(z-a)^m f(z)}
-        %\end{align}
-        
-        We get $y(n)$ as: 
+        Using equation \eqref{eq:eq5} and equation \eqref{eq:eq3} we get Y\brak{z} as:
         \begin{align}
-            y(n)=\frac{33n(n+1)}{2}+\frac{9n(n+1)(2 n+1)}{6}+24(n+1)
+            Y\brak{z}&= \frac{\brak{z}^{-1}\brak{18-9z^2+67}}{\brak{1-z^{-1}}^3} + \frac{\brak{42-9z^{-1}}}{\brak{1-z^{-1}}^2} 
         \end{align}
-        
-        \includegraphics[width=\columnwidth]{plot.png}
-
-        
-            
-           
-             
-             
-             
-        
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
+        \begin{align}
+            nu\brak{n} &\system{Z} \frac{z^{-1}}{\brak{1-z^{-1}}^2} \cbrak{\abs{z}>1} \label{eq:z transform of nu{n}} \\
+            n^2 u\brak{n} &\system{Z} \frac{z^{-1}\brak{1+z^{-1}}}{\brak{1-z^{-1}}^3} \cbrak{\abs{z}>1}\label{eq:z transform of n^2u{n}} \\
+            n^3 u\brak{n} &\system{Z} \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4} \cbrak{\abs{z}>1}\label{eq:z transform of n^3u{n}} 
+        \end{align}
+        \begin{align}
+            n^4 u{n} &\system{Z} \frac{z^{-1}\brak{1+11z^{-1}+11z^{-2}+z^{-3}}}{\brak{1-z^{-1}}^5} \cbrak{\abs{z}>1}\label{eq:z transform of n^4u{n}}
+        \end{align}
+        Taking reverse z transform, using equations \eqref{eq:z transform of nu{n}} to \eqref{eq:z transform of n^4u{n}}
+        We get $y\brak{n}$ as: 
+        \begin{align}
+            y\brak{n}=\frac{33n\brak{n+1}}{2}+\frac{9n\brak{n+1}\brak{2n+1}}{6}+24\brak{n+1}
+        \end{align}
+        \includegraphics[width=\columnwidth]{figs/plot.png}
+        \label{fig:Graph1_math.11.9.4.8}
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-
-
-
-
-
-
+\end{document}

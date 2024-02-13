@@ -148,16 +148,17 @@ Q: Find the sum to n terms of $3 \times 8 + 6 \times 11 + 9 \times 14 + ...$ \\
 n^3u(n) \xleftrightarrow{\mathcal{Z}} \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4} \quad \abs{z}>1 \\ \label{eq:11.9.4.10.4.eq}
 \end{equation} 
 \begin{align}
-            \implies X\brak{z}&=9z^{-1}\frac{\brak{1+z^{-1}}}{\brak{1-z^{-1}}^3} + \frac{33}{\brak{1-z^{-1}}^2} +\frac{24}{\brak{1-z^{-1}}} \abs{z}>1    \label{eq:eq5}\\
+            \implies X\brak{z}&=9z^{-1}\frac{\brak{1+z^{-1}}}{\brak{1-z^{-1}}^3} + \frac{33\brak{z^{-1}}}{\brak{1-z^{-1}}^2} +\frac{24}{\brak{1-z^{-1}}} \abs{z}>1    \label{eq:eq5}\\
             Y\brak{z} &= X\brak{z}U\brak{z} \label{eq:eq3} \\
-              \implies Y\brak{z}&= \frac{\brak{z}^{-1}\brak{18-9z^2+67}}{\brak{1-z^{-1}}^3} + \frac{\brak{42-9z^{-1}}}{\brak{1-z^{-1}}^2} \label{eq:11.9.4.10.5.eq}
+              \implies Y\brak{z}&= 9z^{-1}\frac{\brak{1+z^{-1}}}{\brak{1-z^{-1}}^4} + \frac{33\brak{z^{-1}}}{\brak{1-z^{-1}}^3} +\frac{24}{\brak{1-z^{-1}}^2} \abs{z}>1  \label{eq:11.9.4.10.5.eq}
         \end{align}
         Now from~\eqref{eq:11.9.4.10.1.eq},~\eqref{eq:11.9.4.10.2.eq},~\eqref{eq:11.9.4.10.3.eq},~\eqref{eq:11.9.4.10.4.eq},
  ~\eqref{eq:11.9.4.10.5.eq} By using  inverse Z-transform pairs,
  \begin{align}
-            y\brak{n}=\frac{33n\brak{n+1}}{2}+\frac{9n\brak{n+1}\brak{2n+1}}{6}+24\brak{n+1}
+            y\brak{n}= \brak{\frac{9n\brak{n+1}\brak{2n+1}}{6}+\frac{33n\brak{n+1}}{2}+24\brak{n+1}}u\brak{n}
         \end{align}
-        $\therefore$ Sum of $n$ terms of the series whose $n^{th}$ term is given by $\brak{3n+3}\brak{3n+8}$ is $\frac{33n\brak{n+1}}{2}+\frac{9n\brak{n+1}\brak{2n+1}}{6}+24\brak{n+1}$
+        $\therefore$ Sum of $n$ terms of the series whose $n^{th}$ term is given by $\brak{3n+3}\brak{3n+8}$ is $(\frac{9n\brak{n+1}\brak{2n+1}}{6}+\frac{33n\brak{n+1}}{2}+24\brak{n+1})$u$\brak{n}$
+        \\ \\
         \includegraphics[width=\columnwidth]{figs/plot.png}
         \label{fig:Graph1_math.11.9.4.8}
         

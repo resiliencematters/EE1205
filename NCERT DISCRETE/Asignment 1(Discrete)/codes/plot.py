@@ -6,7 +6,7 @@ def strip_line(line):
 
 vectorized_strip = np.vectorize(strip_line)
 
-with open('values.dat', 'r') as file:
+with open('output.dat', 'r') as file:
     lines = np.array(file.readlines())
 
 stripped_lines = vectorized_strip(lines)
@@ -22,6 +22,5 @@ y_values = access_element(n_values)
 plt.stem(n_values, y_values, linefmt='b-', markerfmt='bo', basefmt='r-')
 plt.xlabel('n')
 plt.ylabel('y(n)')
-plt.title('Stem plot of y(n)')
 plt.grid(True)
 plt.show()

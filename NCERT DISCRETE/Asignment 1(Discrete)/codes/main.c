@@ -7,23 +7,22 @@ int x(int n) {
     return (3*n + 3)*(3*n + 8);
 }
 int u(int n) {
-    return (n >= 0) ? 1 : 0;
+    return (n >= 0) ? 1 : 0; // Unit step function u(n)
 }
 
 
 int main() {
     FILE *fp;
-    fp = fopen("output.dat", "w");
+    fp = fopen("output.dat", "w"); // Open file for writing
 
     if (fp == NULL) {
         printf("Error opening file.\n");
         return 1;
     }
 
-    int n = 15; // no of terms
+    int n = 15; // Number of terms
     int sum = 0;
     int a = 3, b = 8;
-    fprintf(fp,"Writing the sum of n terms through C\n");
     for (int i = 0; i <= n; i++) {
         printf("%d * %d\n", a, b);
         sum += (a * b);
@@ -34,10 +33,11 @@ int main() {
     }
 
     // Write sum to file
+    fprintf(fp,"Writing the sum of n terms through C\n");
 
 
     int y[5];
-    fprintf(fp,"Writing Sum values through convolution\n");
+    
 
     // Convolution sum for the first 5 elements
     for (n = 0; n < 5; n++) {
@@ -57,7 +57,8 @@ int main() {
 
 
     double sumvalues[5];
-    fprintf(fp,"Generating the first five terms of the seqyence using the formula of y(n)\n");
+    fprintf(fp,"Writing Sum values through convolution\n");
+    
     // Generate the first five terms of the sequence
     for (n = 0; n < 5; n++) {
         sumvalues[n] = sum2(n);
@@ -69,7 +70,7 @@ int main() {
     for (n = 0; n < 5; n++) {
         fprintf(fp, "%d\t\t%.2f\n", n, sumvalues[n]);
     }
-
+    fprintf(fp,"Generating the first five terms of the seqyence using the formula of y(n)\n");
     fclose(fp);
 
     return 0;

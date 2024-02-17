@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
 import numpy as np
 
 def strip_line(line):
@@ -19,8 +20,19 @@ access_element = np.vectorize(lambda n: lines_list[n])
 
 y_values = access_element(n_values)
 
-plt.stem(n_values, y_values, linefmt='b-', markerfmt='bo', basefmt='r-')
+plt.stem(n_values, y_values, linefmt='r-', markerfmt='rx', basefmt='r-', label=r'$y(n)$')
+plt.stem(n_values, y_values, linefmt='g-', markerfmt='go', basefmt='g-', label='Simulation')
+
+plt.setp(plt.gca().lines[0], markersize=8)  
+plt.setp(plt.gca().lines[1], markersize=12) 
+plt.gca().xaxis.set_major_locator(MultipleLocator(1))
+plt.legend()
+
+
+#plt.stem(n_values, y_values, linefmt='b-', markerfmt='bo', basefmt='r-')
 plt.xlabel('n')
 plt.ylabel('y(n)')
 plt.grid(True)
+plt.savefig('../figs/plot.png')
 plt.show()
+

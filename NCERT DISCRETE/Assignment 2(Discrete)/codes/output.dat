@@ -1,31 +1,15 @@
 10
-24
+14
+18
+22
+26
+30
+34
+38
 42
-64
-90
-120
-154
-192
-234
-280
-330
-384
-442
-504
-570
-640
-Writing the sum of n terms through C
-n		y(n)
-0		10
-1		24
-2		42
-3		64
-4		90
-Writing Sum values through convolution
-n		y(n)
-0		10.00
-1		24.00
-2		42.00
-3		64.00
-4		90.00
-Generating the first five terms of the seqyence using the formula of y(n)
+46
+50
+54
+58
+62
+66

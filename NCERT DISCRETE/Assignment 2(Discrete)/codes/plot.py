@@ -20,8 +20,8 @@ access_element = np.vectorize(lambda n: lines_list[n])
 
 y_values = access_element(n_values)
 
-plt.stem(n_values, y_values, linefmt='r-', markerfmt='rx', basefmt='r-', label=r'$y(n)$')
-plt.stem(n_values, y_values, linefmt='g-', markerfmt='go', basefmt='g-', label='Simulation')
+
+plt.stem(n_values, y_values, linefmt='g-', markerfmt='go', basefmt='g-', label='$x(n)$')
 
 plt.setp(plt.gca().lines[0], markersize=8)  
 plt.setp(plt.gca().lines[1], markersize=12) 

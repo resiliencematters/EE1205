@@ -126,47 +126,33 @@ Find the sum of first 51 terms of an AP whose second and third terms are 14 and 
     \label{}
 \end{table}
     
-       
-        Sum of $n$ terms of AP is given by
-        \begin{align}
-            x\brak{n} &= \brak{4n+10}u\brak{n} \\
-            y\brak{n} &= x\brak{n}*u\brak{n}
-        \end{align}
-        \begin{equation}
-   u(n) \xleftrightarrow{\mathcal{Z}} \frac{1}{(1-z^{-1})}  \quad \abs{z}>1\\ \label{eq:11.9.4.10.1.eq}
-\end{equation}
-
-\begin{equation}   
-   nu(n) \xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{(1-z^{-1})^2} \quad \abs{z}>1\\ \label{eq:11.9.4.10.2.eq}
-\end{equation}
-
-\begin{equation}   
-   n^2u(n) \xleftrightarrow{\mathcal{Z}} \frac{z^{-1}(1+z^{-1})}{(1-z^{-1})^3} \quad \abs{z}>1 \\ \label{eq:11.9.4.10.3.eq}
-\end{equation}  
-
-\begin{equation}
-n^3u(n) \xleftrightarrow{\mathcal{Z}} \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak{1-z^{-1}}^4} \quad \abs{z}>1 \\ \label{eq:11.9.4.10.4.eq}
-\end{equation} 
+       For an $AP$,
 \begin{align}
-            \implies X\brak{z}&=\frac{\brak{4z^{-1}}}{\brak{1-z^{-1}}^2} +\frac{10}{\brak{1-z^{-1}}} \abs{z}>1    \label{eq:eq5}\\
-            Y\brak{z} &= X\brak{z}U\brak{z} \label{eq:eq3} \\
-              \implies Y\brak{z}&= \frac{\brak{4z^{-1}}}{\brak{1-z^{-1}}^3} +\frac{10}{\brak{1-z^{-1}}^2} \abs{z}>1  \label{eq:11.9.4.10.5.eq}
-        \end{align}
-        Now from~\eqref{eq:11.9.4.10.1.eq},~\eqref{eq:11.9.4.10.2.eq},~\eqref{eq:11.9.4.10.3.eq},~\eqref{eq:11.9.4.10.4.eq},
- ~\eqref{eq:11.9.4.10.5.eq} By using Contour Integration,
-    \begin{align}
-            y\brak{n}= \brak{2n\brak{n+1}+10\brak{n+1}}u\brak{n}
-        \end{align}
-        $\therefore$ Sum of $n$ terms of the series whose $n^{th}$ term is given by $\brak{4n+10}u\brak{n}$ is $(2n\brak{n+1}+10\brak{n+1})$u$\brak{n}$
-        \begin{figure}[h]
-    \centering
-     \includegraphics[width=\columnwidth]{figs/plot.png}
-    \caption{Theory vs Simulation}    
-    \label{}
-\end{figure}
-
-        
-
-
-
+    X\brak z &= \frac{ x\brak 0 }{1-z^{-1}} + \frac{dz^{-1}}{{(1-z^{-1})}^{2}}    \\
+    \implies X\brak z &= \frac{10}{(1-z^{-1})} + \frac{4z^{-1}}{{(1-z^{-1})}^{2}}, \abs{z}>1    \\
+    y\brak{n}&=x\brak{n}\ast u\brak{n}\\
+    \implies Y\brak{z}&=X\brak{z}U\brak{z}   \\
+    \implies Y\brak z &= \frac{10}{(1-z^{-1})^{2}} + \frac{4z^{-1}}{{(1-z^{-1})}^{3}} \\  
+     \implies Y\brak z &= \frac{(-6z^{-1}+10)}{(1-z^{-1})^{3}} , \abs{z}>1
+\end{align}
+Using Contour Integration to find the inverse $Z$-transform,
+\begin{align}
+    y(50)&=\frac{1}{2\pi j}\oint_{C}Y(z) \;z^{49} \;dz  \\
+    &=\frac{1}{2\pi j}\oint_{C}\frac{(-6Z^{-1}+10)z^{49}}{({1-z^{-1})}^{3}} \;dz 
+\end{align}
+We can observe that the pole is repeated $3$ times and thus $m=3$,
+\begin{align}
+    R&=\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z}  \\
+    \implies R &=\frac{1}{\brak {2}!}\lim\limits_{z\to 1}\frac{d^{2}}{dz^{2}}\brak {{(z-1)}^{3}\frac{(-6Z^{-1}+10)z^{52}}{{(z-1)}^3}}   \\
+    \implies R &=\frac{1}{2}\lim\limits_{z\to 1}\frac{d^2}{dz^2}(10z^{52}-6z^{51})   \\
+    \implies R &=5610
+\end{align}
+\begin{align}
+    \therefore y(50)=5610
+\end{align}
+\begin{figure}[ht]
+        \centering
+        \includegraphics[width=\columnwidth]{figs/plot.png}
+        \caption{Plot of x(n) $vs$ n}
+    \end{figure}
 \end{document}

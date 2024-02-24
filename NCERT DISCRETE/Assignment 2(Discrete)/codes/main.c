@@ -1,8 +1,5 @@
 #include <stdio.h>
 #define SIZE 51
-double sum2(int n) {
-    return 2.0 * n * (n+1) + 10.0 * (n+1);
-}
 int x(int n) {
     return (4*n+10);
 }
@@ -30,12 +27,6 @@ int main() {
     int d=4;
     int sum=0;
 
-    // Store the first five terms in a text file
-   
-    
-    for (n = 0; n < 15; n++) {
-        fprintf(fp, "%d\n", x(n));
-    }
 
     // 2nd part of code DOING CONVOLUTION TO OBTAIN SUM OF N TERMS AND STORING VALUES IN TEXT FILE
 
@@ -64,7 +55,7 @@ int main() {
     for (int i = 0; i < size; i++) {
         fprintf(fp, "%d %d\n",i, conv_output[i]);
     }
-    
+
     fclose(fp);
 
     return 0;

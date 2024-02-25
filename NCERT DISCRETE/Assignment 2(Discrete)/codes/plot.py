@@ -15,7 +15,7 @@ y_values = data[:, 1]
 
 
 highlight_index = 50
-plt.scatter(x_values[highlight_index], y_values[highlight_index], color='red', marker='x', s=100, label='y(50)Analysis')
+plt.scatter(x_values[highlight_index], y_values[highlight_index], color='red', marker='x', s=100, label='y(50)(Analysis)')
 plt.stem(x_values, y_values, markerfmt='bo', linefmt='b-', basefmt='r-',label='y(n)(Simulation)') 
 plt.axhline(y=5610, color='green', linestyle='--',label='(y=5610)')
 # Set labels and title

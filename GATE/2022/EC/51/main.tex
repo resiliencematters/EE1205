@@ -15,8 +15,8 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 \usepackage{listings}
-
-
+\usepackage[siunitx]{circuitikz}[american voltages]
+\usetikzlibrary{decorations.markings}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{problem}{Problem}
@@ -104,7 +104,7 @@
 
 
 \bibliographystyle{IEEEtran}
-\title{SEQUENCE AND SERIES}
+\title{GATE-EC-51}
 \author{EE23BTECH11059- Tejas Mehtre$^{*}$% <-this % stops a space
 }
 \maketitle
@@ -117,40 +117,56 @@
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 %\renewcommand{\theequation}{\theenumi}
-A series \brak{S} is given as S=1+3+5+7+9+..... The sum of the first 50 terms of S is \underline{\hspace{1in}} \\
+Consider an FM broadcast that employs the pre-emphasis filter with frequency response \\
+    \begin{align*}
+        H_{pe}\brak{\omega}= 1+ \frac{j\omega}{\omega _0},
+    \end{align*}
+    where $\omega_0=10^4$ rad/sec. \\
+    For the network shown in the figure to act as a corresponding de-emphasis filter, the
+appropriate pair(s) of (R,C) values is/are 
+\underline{\hspace{1in}} \\ \\
+\begin{center}
+    \begin{circuitikz}
+		\draw
+		(0,0)  to[resistor,*-,l=$R$] (4,0)
+		to[capacitor,l=$C$] (4,-4) to (7,-4)
+		(4,0) -- (7,0)
+		(4,-4) to[short,-*] (0,-4);
+		\node[below left] at (0,0){$+$};
+		\node[above left] at (0,-4){$-$};
+		\node[below right] at (7,0){$+$};
+		\node[above right] at (7,-4){$-$};
+		\draw [<->] (0,-0.3) -- (0,-3.7);
+		\node[left] at (0,-2){input};
+		\draw [<->] (7,-0.3) -- (7,-3.7);
+		\node[right] at (7,-2){output};
+	\end{circuitikz}
+\end{center}
+\begin{enumerate}
+    \item[A.] $R=1k\ohm$, $C=0.1\micro F$
+    \item[B.] $R=2k\ohm$, $C=1\micro F$
+    \item[C.] $R=1k\ohm$, $C=2\micro F$
+    \item[D.] $R=2k\ohm$, $C=0.5\micro F$
+\end{enumerate}
+  \\
     \solution
     \begin{table}[!ht]
     \centering
-        %\input{./tables/table}
+        \input{./tables/table}
     \caption{input parameters}
     \label{}
 \end{table}
     
-       For an $AP$,
+Transfer function of the above $RC$ circuit will be
 \begin{align}
-    X\brak z &= \frac{ x\brak 0 }{1-z^{-1}} + \frac{dz^{-1}}{{(1-z^{-1})}^{2}}    \\
-    \implies X\brak z &= \frac{1}{(1-z^{-1})} + \frac{2z^{-1}}{{(1-z^{-1})}^{2}}, \abs{z}>1    \\
-    y\brak{n}&=x\brak{n}\ast u\brak{n}\\
-     Y\brak{z}&=X\brak{z}U\brak{z}   \\
-     Y\brak z &= \frac{1}{(1-z^{-1})^{2}} + \frac{2z^{-1}}{{(1-z^{-1})}^{3}} \\  
-     \implies Y\brak z &= \frac{(z^{-1}+1)}{(1-z^{-1})^{3}} , \abs{z}>1
+    H\brak{j\omega}=\frac{V_o\brak{j\omega}}{V_i\brak{j\omega}}= \frac{1}{1+j\omega RC}
 \end{align}
-Using Contour Integration to find the inverse $Z$-transform,
+The given $RC$ circuit to act as de-emphasis filter
 \begin{align}
-    y(49)&=\frac{1}{2\pi j}\oint_{C}Y(z) \;z^{48} \;dz  \\
-    &=\frac{1}{2\pi j}\oint_{C}\frac{(z^{-1}+1)z^{48}}{({1-z^{-1})}^{3}} \;dz 
+    \abs{H\brak{j\omega}}&= \frac{1}{\abs{H_{pre}\brak{\omega}}} \\
+    \frac{1}{\sqrt{1+\brak{\omega RC}^2}}&= \frac{1}{\sqrt{1+\brak{\frac{\omega}{\omega_0}}^2}} \\
+    \omega_0&= \frac{1}{RC} \\
+    \omega_0&=10^4 rad/sec
 \end{align}
-We can observe that the pole is repeated $3$ times and thus $m=3$,
-\begin{align}
-    R&=\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z}  \\
-    \implies R &=\frac{1}{\brak {2}!}\lim\limits_{z\to 1}\frac{d^{2}}{dz^{2}}\brak {{(z-1)}^{3}\frac{(z^{-1}+1)z^{51}}{{(z-1)}^3}}   \\
-    \implies R &=\frac{1}{2}\lim\limits_{z\to 1}\frac{d^2}{dz^2}(z^{50}+z^{51})   \\
-    \implies R &=2500 \\
-    \therefore y(50)&=2500
-\end{align}
-\begin{figure}[ht]
-        \centering
-        \includegraphics[width=\columnwidth]{figs/plot.png}
-        \caption{Analysis vs Simulation}
-    \end{figure}
+Thus $\omega_0 10^4$ rad/sec only possible if we choose $R=1k\ohm$ and $C=0.1\micro F$ from options. Hence, the correct option is (B).
 \end{document}

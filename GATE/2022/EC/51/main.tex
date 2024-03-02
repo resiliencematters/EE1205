@@ -148,19 +148,33 @@ appropriate pair(s) of (R,C) values is/are
     \item[C.] $R=1k\ohm$, $C=2\micro F$
     \item[D.] $R=2k\ohm$, $C=0.5\micro F$
 \end{enumerate}
-  \\
-    \solution
+\\ 
+  \solution
     \begin{table}[!ht]
     \centering
         \input{./tables/table}
     \caption{input parameters}
     \label{}
 \end{table}
-    
-Transfer function of the above $RC$ circuit will be
-\begin{align}
-    H\brak{j\omega}=\frac{V_o\brak{j\omega}}{V_i\brak{j\omega}}= \frac{1}{1+j\omega RC}
-\end{align}
+\\
+    Taking KVL around the loop,
+    \begin{align}
+        -V_i\brak{t} + i\brak{t}R + V_0\brak{t}=0 
+    \end{align}
+    \begin{align}
+        \mathcal{L}\brak{f'\brak{t}} &= sF\brak{s}-f\brak{0} \label{q:2022/EC/51/1} \\
+        i\brak{t}&= C\frac{dV_0\brak{t}}{dt} \label{eq:2022/EC/51/2}
+    \end{align}
+    Using \eqref{q:2022/EC/51/1} and \eqref{eq:2022/EC/51/2},
+    \begin{align}
+        \mathcal{L}\brak{ -V_i\brak{t} + RC\frac{dV_0\brak{t}}{dt} + V_0\brak{t}}&=\mathcal{L}\brak{0} \\
+        V_0\brak{s}\brak{1+j\omega RC}&= V_i\brak{s} \\
+         H\brak{j\omega}=\frac{V_o\brak{j\omega}}{V_i\brak{j\omega}} &= \frac{1}{1+j\omega RC}
+    \end{align}
+%Transfer function of the above $RC$ circuit will be
+%\begin{align}
+ %   H\brak{j\omega}=\frac{V_o\brak{j\omega}}{V_i\brak{j\omega}}= \frac{1}{1+j\omega RC}
+%\end{align}
 The given $RC$ circuit to act as de-emphasis filter
 \begin{align}
     \abs{H\brak{j\omega}}&= \frac{1}{\abs{H_{pre}\brak{\omega}}} \\
@@ -168,5 +182,11 @@ The given $RC$ circuit to act as de-emphasis filter
     \omega_0&= \frac{1}{RC} \\
     \omega_0&=10^4 rad/sec
 \end{align}
-Thus $\omega_0 10^4$ rad/sec only possible if we choose $R=1k\ohm$ and $C=0.1\micro F$ from options. Hence, the correct option is (B).
+Thus $\omega_0=10^4$ rad/sec only possible if we choose $R=1k\ohm$ and $C=0.1\micro F$ from options. Hence, the correct option is (B).
+\begin{figure}[ht]
+        \centering
+        \includegraphics[width=\columnwidth]{figs/plot.png}
+        \caption{Transient response of a pre-emphasis filter}
+    \end{figure}
+\end{document}
 \end{document}

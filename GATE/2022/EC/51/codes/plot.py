@@ -8,15 +8,14 @@ def plot_graph_from_file(file_path):
     with open(file_path, 'r') as file:
         for line in file:
             # Split each line into x and y values
-            y, x = map(float, line.split())
+            x, y = map(float, line.split())
             x_values.append(x)
             y_values.append(y)
 
     # Plot the graph
-    plt.plot(x_values, y_values, linestyle='-')
-    plt.xlabel('X values')
-    plt.ylabel('Y values')
-    plt.title('Graph from Text File')
+    plt.plot(x_values, y_values, linestyle='-',color='red')
+    plt.xlabel(' logw')
+    plt.ylabel('20log(|H(w)|)')
     plt.grid(True)
     plt.show()
 

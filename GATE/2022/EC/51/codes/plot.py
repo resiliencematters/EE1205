@@ -15,7 +15,7 @@ def plot_graph_from_file(file_path):
     # Plot the graph
     plt.plot(x_values, y_values, linestyle='-',color='red')
     plt.xlabel(' logw')
-    plt.ylabel('20log(|H(w)|)')
+    plt.ylabel('dB')
     plt.grid(True)
     plt.show()
 

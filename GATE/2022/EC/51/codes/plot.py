@@ -1,16 +1,25 @@
-import numpy as np
 import matplotlib.pyplot as plt
 
-# Define the range of omega values
-omega = np.linspace(0, 100000, 1000)  # Adjust the range as needed
+def plot_graph_from_file(file_path):
+    x_values = []
+    y_values = []
 
-# Compute the magnitude in decibels
-magnitude_dB = 20 * np.log10(np.abs(1 + 1j * omega * 0.0001))
+    # Read data from the file
+    with open(file_path, 'r') as file:
+        for line in file:
+            # Split each line into x and y values
+            y, x = map(float, line.split())
+            x_values.append(x)
+            y_values.append(y)
 
-# Plot the magnitude response
-plt.figure(figsize=(10, 6))
-plt.plot(omega, magnitude_dB, color='red')
-plt.xlabel('ω')
-plt.ylabel('H(ω)(dB)')
-plt.grid(True)
-plt.show()
+    # Plot the graph
+    plt.plot(x_values, y_values, linestyle='-')
+    plt.xlabel('X values')
+    plt.ylabel('Y values')
+    plt.title('Graph from Text File')
+    plt.grid(True)
+    plt.show()
+
+# Example usage:
+file_path = 'output.txt'  # Update with your file path
+plot_graph_from_file(file_path)

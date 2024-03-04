@@ -21,5 +21,5 @@ def plot_graph_from_file(file_path):
     plt.show()
 
 # Example usage:
-file_path = 'output.txt'  # Update with your file path
+file_path = 'output.dat'  # Update with your file path
 plot_graph_from_file(file_path)

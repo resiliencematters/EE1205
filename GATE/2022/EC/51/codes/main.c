@@ -5,7 +5,7 @@
 
 int main() {
     FILE *fp;
-    fp = fopen("output.txt", "w");
+    fp = fopen("output.dat", "w");
 
     if (fp == NULL) {
         printf("Error opening file!\n");

@@ -125,30 +125,13 @@ Consider an FM broadcast that employs the pre-emphasis filter with frequency res
     For the network shown in the figure to act as a corresponding de-emphasis filter, the
 appropriate pair(s) of (R,C) values is/are 
 \underline{\hspace{1in}} \\ \\
-\begin{center}
-    \begin{circuitikz}
-		\draw
-		(0,0)  to[resistor,*-,l=$R$] (4,0)
-		to[capacitor,l=$C$] (4,-4) to (7,-4)
-		(4,0) -- (7,0)
-		(4,-4) to[short,-*] (0,-4);
-		\node[below left] at (0,0){$+$};
-		\node[above left] at (0,-4){$-$};
-		\node[below right] at (7,0){$+$};
-		\node[above right] at (7,-4){$-$};
-		\draw [<->] (0,-0.3) -- (0,-3.7);
-		\node[left] at (0,-2){input};
-		\draw [<->] (7,-0.3) -- (7,-3.7);
-		\node[right] at (7,-2){output};
-	\end{circuitikz}
-\end{center}
+\input{figs/circuit}
 \begin{enumerate}
     \item[A.] $R=1k\ohm$, $C=0.1\micro F$
     \item[B.] $R=2k\ohm$, $C=1\micro F$
     \item[C.] $R=1k\ohm$, $C=2\micro F$
     \item[D.] $R=2k\ohm$, $C=0.5\micro F$
 \end{enumerate}
-\\ 
   \solution
     \begin{table}[!ht]
     \centering
@@ -162,7 +145,7 @@ appropriate pair(s) of (R,C) values is/are
         -V_i\brak{t} + i\brak{t}R + V_0\brak{t}=0 
     \end{align}
     \begin{align}
-        \mathcal{L}\brak{f'\brak{t}} &= sF\brak{s}-f\brak{0} \label{q:2022/EC/51/1} \\
+        \mathcal{L}\brak{f'\brak{t}} &\xleftrightarrow{\mathcal{L}} sF\brak{s}-f\brak{0} \label{q:2022/EC/51/1} \\
         i\brak{t}&= C\frac{dV_0\brak{t}}{dt} \label{eq:2022/EC/51/2}
     \end{align}
     Using \eqref{q:2022/EC/51/1} and \eqref{eq:2022/EC/51/2},
@@ -186,7 +169,7 @@ Thus $\omega_0=10^4$ rad/sec only possible if we choose $R=1k\ohm$ and $C=0.1\mi
 \begin{figure}[ht]
         \centering
         \includegraphics[width=\columnwidth]{figs/plot.png}
-        \caption{Transient response of a pre-emphasis filter}
+        \caption{Frequency response of a pre-emphasis filter.}
     \end{figure}
 \end{document}
 \end{document}
